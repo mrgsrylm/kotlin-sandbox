@@ -30,7 +30,12 @@ package com.dicoding.exam.latihanopsional3
  */
 
 fun manipulateString(str: String, int: Int): String {
-    return ""
+    val numberInString = str.filter { it.isDigit() }.toIntOrNull()
+    return if (numberInString != null) {
+        str.replace(numberInString.toString(), (numberInString * int).toString())
+    } else {
+        str + int
+    }
 }
 
 fun main() {

@@ -26,7 +26,8 @@ import kotlinx.coroutines.runBlocking
  *
  */
 suspend fun sum(valueA: Int, valueB: Int): Int {
-    return 0
+    delay(3000)
+    return valueA + valueB
 }
 
 /**
@@ -39,7 +40,8 @@ suspend fun sum(valueA: Int, valueB: Int): Int {
  *
  */
 suspend fun multiple(valueA: Int, valueB: Int): Int {
-    return 0
+    delay(2000)
+    return valueA * valueB
 }
 
 fun main() = runBlocking {

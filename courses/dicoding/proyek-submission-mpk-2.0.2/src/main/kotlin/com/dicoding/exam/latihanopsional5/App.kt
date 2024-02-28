@@ -37,6 +37,4 @@ fun main() {
  * Pastikan tidak mengubah nama 'concatString'
  */
 
-fun concatString(string1: String, string2: String): String {
-    return ""
-}
+val concatString: (String, String) -> String = { string1, string2 -> string1 + string2 }
