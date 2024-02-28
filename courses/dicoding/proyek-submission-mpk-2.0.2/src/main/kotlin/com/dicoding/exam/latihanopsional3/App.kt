@@ -30,12 +30,12 @@ package com.dicoding.exam.latihanopsional3
  */
 
 fun manipulateString(str: String, int: Int): String {
-    val numberInString = str.filter { it.isDigit() }.toIntOrNull()
-    return if (numberInString != null) {
-        str.replace(numberInString.toString(), (numberInString * int).toString())
-    } else {
-        str + int
-    }
+    val numberInString = str.filter { it.isDigit() }.toIntOrNull() ?: return str + int.toString()
+
+    val nonNumberPart = str.filter { !it.isDigit() }
+    val multipliedNumber = numberInString * int
+
+    return nonNumberPart + multipliedNumber.toString()
 }
 
 fun main() {
